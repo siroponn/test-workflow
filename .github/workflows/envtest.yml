@@ -19,3 +19,11 @@ jobs:
       - run: echo "${USERNAME}"
       - run: echo "${PASSWORD}"
       - run: echo "${PASSWORD:0:1} ${PASSWORD#?}"
+  LTE:
+    runs-on: ubuntu-latest
+    steps:
+      - run: printenv | grep 'LITERAL'
+        env:
+          LITERAL_NULL: ${{ null }}
+          LITERAL_BOOL: ${{ true }}
+          LITERAL_NUMBER: ${{ 1234 }}
