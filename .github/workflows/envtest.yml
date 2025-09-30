@@ -1,0 +1,12 @@
+name: evtest
+on: push
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    env:
+      BRANCHE: main
+    steps:
+      - run: echo "${BRANCHE}"
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{env.BRANCH}}
