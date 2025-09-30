@@ -35,3 +35,8 @@ jobs:
         env:
           FORMAT_FUNC: ${{ format('{0}, {1}.','Hi','World') }}
           JOIN_FUNC: ${{ join(github.event.*.html_url, ',') }}
+  conditions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello"
+        if: ${{ contains(github.run_id, '1') }}
