@@ -27,7 +27,6 @@ jobs:
       #- run: printenv | grep 'LITERAL'
       - run: printenv
         env:
-          LITERAL_NULL: ${{ null }}
           LITERAL_BOOL: ${{ true }}
           LITERAL_NUMBER: ${{ 1234 }}
   generate:
