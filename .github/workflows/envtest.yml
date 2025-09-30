@@ -38,6 +38,8 @@ jobs:
       - run: echo "qute"
   conditions:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_RUN: ${{ github.run_id }}
     steps:
-      - run: echo "${github.run_id}"
+      - run: echo "${GITHUB_RUN}"
         if: ${{ contains(github.run_id, '1') }}
