@@ -35,7 +35,7 @@ jobs:
         env:
           FORMAT_FUNC: ${{ format('{0}, {1}.','Hi','World') }}
           JOIN_FUNC: ${{ join(github.event.*.html_url, ',') }}
-      - run: printenv | grep '_FUNC'
+      - run: echo "qute"
   conditions:
     runs-on: ubuntu-latest
     steps:
