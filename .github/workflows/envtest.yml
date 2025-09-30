@@ -11,12 +11,14 @@ jobs:
         with:
           ref: ${{env.BRANCH}}
   print:
+    name: super print
     runs-on: ubuntu-latest
     env:
       USERNAME: ${{ vars.USERNAME }}
       PASSWORD: ${{ secrets.PASSWORD }}
     steps:
-      - run: echo "${USERNAME}"
+      - name: userprint
+        run: echo "${USERNAME}"
       - run: echo "${PASSWORD}"
       - run: echo "${PASSWORD:0:1} ${PASSWORD#?}"
   LTE:
