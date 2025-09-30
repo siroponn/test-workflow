@@ -7,6 +7,13 @@ on:
         default: hello
         required: true
         description: A ch world
+      loglevel:
+        description: choise test
+        type: choice
+        options:
+          - info
+          - warn
+          - error
 jobs:
   run:
     runs-on: ubuntu-latest
