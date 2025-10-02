@@ -1,25 +1,22 @@
 name: manual
 on: 
   workflow_dispatch:
-    inputs:
-      greeting:
-        type: string
-        default: hello
-        required: true
-        description: A ch world
-      loglevel:
-        description: choise test
-        type: choice
-        options:
-          - info
-          - warn
-          - error
+    # inputs:
+    #   greeting:
+    #     type: string
+    #     default: hello
+    #     required: true
+    #     description: A ch world
+    #   loglevel:
+    #     description: choise test
+    #     type: choice
+    #     options:
+    #       - info
+    #       - warn
+    #       - error
 jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-      - uses: siroponn/test-workflow-call/.github/workflows/callable.yaml@v1
-        with:
-          teststring: ${{ inputs.greeting }}
-
+    - uses: siroponn/test-workflow-call/.github/workflows/callable.yaml@v1
 
