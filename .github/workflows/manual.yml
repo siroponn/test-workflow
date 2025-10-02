@@ -18,5 +18,6 @@ jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-    - uses: siroponn/test-workflow-call/.github/workflows/callable.yaml@v1
+      # uses: siroponn/test-workflow-call/.github/workflows/callable.yaml@v1
+      - run: echo "aaaa"
 
