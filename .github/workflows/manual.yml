@@ -16,9 +16,7 @@ on:
     #       - error
 jobs:
   run:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    - uses: siroponn/test-workflow-call/.github/workflows/callable.yaml@v1
+    uses: siroponn/test-workflow-call/.github/workflows/callable.yaml@v1
+    #runs-on: ubuntu-latest
       #- run: echo "aaaa"
 
