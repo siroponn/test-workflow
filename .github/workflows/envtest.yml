@@ -1,46 +1,46 @@
-name: evtest
-on: push
-jobs:
-  hello:
-    runs-on: ubuntu-latest
-    env:
-      BRANCHE: main
-    steps:
-      - run: echo "${BRANCHE}"
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{env.BRANCH}}
-  print:
-    name: super print
-    runs-on: ubuntu-latest
-    env:
-      USERNAME: ${{ vars.USERNAME }}
-      PASSWORD: ${{ secrets.PASSWORD }}
-    steps:
-      - name: userprint
-        run: echo "${USERNAME}"
-      - run: echo "${PASSWORD}"
-      - run: echo "${PASSWORD:0:1} ${PASSWORD#?}"
-  LTE:
-    runs-on: ubuntu-latest
-    steps:
-      #- run: printenv | grep 'LITERAL'
-      - run: printenv
-        env:
-          LITERAL_BOOL: ${{ true }}
-          LITERAL_NUMBER: ${{ 1234 }}
-  generate:
-    runs-on: ubuntu-latest
-    steps:
-      - run: printenv | grep '_FUNC'
-        env:
-          FORMAT_FUNC: ${{ format('{0}, {1}.','Hi','World') }}
-          JOIN_FUNC: ${{ join(github.event.*.html_url, ',') }}
-  conditions:
-    runs-on: ubuntu-latest
-    env:
-      GITHUB_RUN: ${{ github.run_id }}
-    steps:
-      - run: echo "${GITHUB_RUN}"
-        if: ${{ contains(github.run_id, '1') }}
-      - run: echo "test"
+# name: evtest
+# on: push
+# jobs:
+#   hello:
+#     runs-on: ubuntu-latest
+#     env:
+#       BRANCHE: main
+#     steps:
+#       - run: echo "${BRANCHE}"
+#       - uses: actions/checkout@v4
+#         with:
+#           ref: ${{env.BRANCH}}
+#   print:
+#     name: super print
+#     runs-on: ubuntu-latest
+#     env:
+#       USERNAME: ${{ vars.USERNAME }}
+#       PASSWORD: ${{ secrets.PASSWORD }}
+#     steps:
+#       - name: userprint
+#         run: echo "${USERNAME}"
+#       - run: echo "${PASSWORD}"
+#       - run: echo "${PASSWORD:0:1} ${PASSWORD#?}"
+#   LTE:
+#     runs-on: ubuntu-latest
+#     steps:
+#       #- run: printenv | grep 'LITERAL'
+#       - run: printenv
+#         env:
+#           LITERAL_BOOL: ${{ true }}
+#           LITERAL_NUMBER: ${{ 1234 }}
+#   generate:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - run: printenv | grep '_FUNC'
+#         env:
+#           FORMAT_FUNC: ${{ format('{0}, {1}.','Hi','World') }}
+#           JOIN_FUNC: ${{ join(github.event.*.html_url, ',') }}
+#   conditions:
+#     runs-on: ubuntu-latest
+#     env:
+#       GITHUB_RUN: ${{ github.run_id }}
+#     steps:
+#       - run: echo "${GITHUB_RUN}"
+#         if: ${{ contains(github.run_id, '1') }}
+#       - run: echo "test"
