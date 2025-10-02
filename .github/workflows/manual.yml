@@ -18,12 +18,8 @@ jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{ inputs.greeting }}"
-  remote_call_another_workflow:
-    runs-on: ubuntu-latest
-    steps:
       - uses: siroponn/test-workflow-call/.github/workflows/callable.yaml@v1
         with:
-          teststring: okokok
+          teststring: ${{ inputs.greeting }}
 
 
