@@ -14,10 +14,13 @@ on:
     #       - info
     #       - warn
     #       - error
+env:
+  id: 8952
+  test_id: ${id}
 jobs:
   run:
     # uses: siroponn/test-workflow-call/.github/workflows/callable.yaml@main
     runs-on: ubuntu-latest
     steps:
-      - run: echo "aaaa"
+      - run: echo "${env.test_id}"
 
