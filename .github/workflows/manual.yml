@@ -16,11 +16,11 @@ on:
     #       - error
 env:
   id: 8952
-  test_id: ${{ id }}
+  test_id: ${{ env.id }}
 jobs:
   run:
     # uses: siroponn/test-workflow-call/.github/workflows/callable.yaml@main
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${env.test_id}"
+      - run: echo "${test_id}"
 
