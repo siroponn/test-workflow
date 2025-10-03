@@ -22,7 +22,7 @@ jobs:
     # uses: siroponn/test-workflow-call/.github/workflows/callable.yaml@main
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${test_id}"
+      - run: echo "aaaa"
         env:
           test_id: ${{ env.id }}
 
