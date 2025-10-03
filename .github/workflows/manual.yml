@@ -16,7 +16,7 @@ on:
     #       - error
 env:
   id: 8952
-  test_id: ${id}
+  test_id: ${{ id }}
 jobs:
   run:
     # uses: siroponn/test-workflow-call/.github/workflows/callable.yaml@main
